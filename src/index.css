@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+/* ===== Brand colors from logo ===== */
+:root {
+  --brand-green: #00873a;
+  --brand-red:   #f0191e;
+  --brand-blue:  #0c56a1;
+}
+
+/* ===== Notice ticker animation ===== */
+@keyframes ticker {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.ticker-anim {
+  animation: ticker 18s linear infinite;
+}
