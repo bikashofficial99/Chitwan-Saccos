@@ -7,6 +7,7 @@ import {
   FaChevronDown,
 } from "react-icons/fa";
 import logo from "../assets/logo.png";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -59,7 +60,7 @@ const Navbar = () => {
 
             <div className="flex items-center gap-1">
               <FaRegIdBadge className="text-[color:var(--brand-green)]" />
-              <span>Reg. No.: 9655562</span>
+              <span>Reg. No.: 96 (054/55)</span>
             </div>
           </div>
         </div>
@@ -114,69 +115,51 @@ const Navbar = () => {
         </div>
       </li>
 
-      {/* Services dropdown */}
-      <li className="relative group pb-1">
-        <button className="flex items-center gap-1 uppercase tracking-[0.18em]">
-          Services
-          <FaChevronDown className="text-[9px]" />
-        </button>
+      
+            {/* SERVICES DROPDOWN */}
+<li className="relative group pb-1">
+  <button className="flex items-center gap-1 uppercase tracking-[0.18em]">
+    Services
+    <FaChevronDown className="text-[9px]" />
+  </button>
 
-        {/* GLASSMORPHISM DROPDOWN */}
-        <div
-          className="
-            invisible absolute left-0 top-full z-20 mt-2 min-w-[230px]
-            rounded-xl border border-white/20 
-            bg-[color:var(--brand-green)]/15 
-            backdrop-blur-lg shadow-[0_4px_20px_rgba(0,0,0,0.15)]
-            transition-all duration-200 
-            opacity-0 group-hover:visible group-hover:opacity-100
-          "
-        >
-          <a
-            href="#services-loans"
-            className="block px-4 py-2 text-[12px] text-[color:var(--brand-blue)] hover:bg-white/10 rounded-md"
-          >
-            Loans
-          </a>
-          <a
-            href="#services-deposit"
-            className="block px-4 py-2 text-[12px] text-[color:var(--brand-blue)] hover:bg-white/10 rounded-md"
-          >
-            Deposit
-          </a>
-          <a
-            href="#services-remittance"
-            className="block px-4 py-2 text-[12px] text-[color:var(--brand-blue)] hover:bg-white/10 rounded-md"
-          >
-            Remittance
-          </a>
-          <a
-            href="#services-insurance"
-            className="block px-4 py-2 text-[12px] text-[color:var(--brand-blue)] hover:bg-white/10 rounded-md"
-          >
-            Insurance
-          </a>
-        </div>
-      </li>
+  <div className="invisible absolute left-0 top-full z-20 mt-2 min-w-[230px]
+    rounded-xl border border-white/20 bg-[color:var(--brand-green)] 
+    shadow-[0_4px_20px_rgba(0,0,0,0.15)]
+    transition-all duration-200 opacity-0 
+    group-hover:visible group-hover:opacity-100">
 
-      {/* Other items */}
-      <li>
-        <a href="#reports" className="uppercase tracking-[0.18em]">
-          Reports
-        </a>
-      </li>
-      <li>
-        <a href="#loan-form" className="uppercase tracking-[0.18em]">
-          Loan Form
-        </a>
-      </li>
-      <li>
-        <a href="#contact" className="uppercase tracking-[0.18em]">
-          Contact Us
-        </a>
-      </li>
+    <Link to="/loan" className="block px-4 py-2 text-white hover:text-[color:var(--brand)] hover:bg-white/10 rounded-md">
+      Loans
+    </Link>
+    <Link to="/deposit" className="block px-4 py-2 text-white hover:text-[color:var(--brand)] hover:bg-white/10 rounded-md">
+      Deposit
+    </Link>
+    <Link to="/remittance" className="block px-4 py-2 text-white hover:text-[color:var(--brand)] hover:bg-white/10 rounded-md">
+      Remittance
+    </Link>
+    <Link to="/insurance" className="block px-4 py-2 text-white hover:text-[color:var(--brand)] hover:bg-white/10 rounded-md">
+      Insurance
+    </Link>
+  </div>
+</li>
 
-    </ul>
+       {/* REPORTS */}
+            <li>
+              <Link to="/report" className="uppercase tracking-[0.18em]">Reports</Link>
+            </li>
+
+            {/* CONTACT US */}
+            <li>
+              <Link to="/contact" className="uppercase tracking-[0.18em]">Contact Us</Link>
+            </li>
+
+            {/* OTHER LINKS */}
+            <li>
+              <a href="#loan-form" className="uppercase tracking-[0.18em]">Loan Form</a>
+            </li>
+
+          </ul>
   </div>
 </nav>
 
